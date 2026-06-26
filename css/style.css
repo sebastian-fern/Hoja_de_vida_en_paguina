@@ -1,0 +1,597 @@
+/* ===============================
+   Sebastian Muñoz Fernandez
+   Portafolio — Estilos
+   =============================== */
+
+:root {
+  --bg:        #0c0e1a;
+  --surface:   #141728;
+  --surface2:  #1c2040;
+  --border:    #272c4a;
+  --primary:   #7c6bff;
+  --accent:    #ff7c5c;
+  --gold:      #ffc94d;
+  --text:      #dde1f5;
+  --muted:     #7a80a8;
+  --radius:    14px;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+}
+
+/* ── NAV ── */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(12,14,26,.88);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: .8rem 2rem;
+}
+
+.nav-logo {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--primary);
+  letter-spacing: -.3px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.6rem;
+  list-style: none;
+}
+
+.nav-links a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: .875rem;
+  font-weight: 500;
+  transition: color .2s;
+}
+
+.nav-links a:hover {
+  color: var(--text);
+}
+
+/* ── HERO ── */
+.hero {
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 5rem 2rem 4rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 50% at 30% 40%, rgba(124,107,255,.18) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 40% at 75% 60%, rgba(255,124,92,.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 720px;
+}
+
+.hero-tag {
+  display: inline-block;
+  font-size: .75rem;
+  font-weight: 600;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--primary);
+  border: 1px solid rgba(124,107,255,.3);
+  border-radius: 999px;
+  padding: .3rem .9rem;
+  margin-bottom: 1.4rem;
+}
+
+.hero h1 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(2.4rem, 6vw, 4rem);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -.04em;
+  margin-bottom: 1rem;
+}
+
+.hero h1 span {
+  color: var(--primary);
+}
+
+.hero-sub {
+  font-size: 1.05rem;
+  color: var(--muted);
+  max-width: 560px;
+  margin: 0 auto 2rem;
+}
+
+.hero-chips {
+  display: flex;
+  gap: .6rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 2.2rem;
+}
+
+.chip {
+  font-size: .78rem;
+  font-weight: 500;
+  padding: .35rem .85rem;
+  border-radius: 999px;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  color: var(--text);
+}
+
+.hero-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  background: var(--primary);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: .9rem;
+  padding: .75rem 1.8rem;
+  border-radius: 999px;
+  transition: opacity .2s, transform .2s;
+}
+
+.hero-cta:hover {
+  opacity: .88;
+  transform: translateY(-2px);
+}
+
+/* ── FOTO DE PERFIL ── */
+.hero-photo {
+  width: 180px;
+  height: 220px;
+  border-radius: 16px;
+  object-fit: cover;
+  object-position: center top;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, .5);
+  margin-bottom: 1.6rem;
+}
+
+/* ── SECCIONES COMPARTIDAS ── */
+section {
+  padding: 5rem 2rem;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.sec-eyebrow {
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--primary);
+  margin-bottom: .5rem;
+}
+
+.sec-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+  font-weight: 700;
+  letter-spacing: -.03em;
+  margin-bottom: .6rem;
+}
+
+.sec-desc {
+  color: var(--muted);
+  max-width: 580px;
+  margin-bottom: 2.8rem;
+  font-size: .95rem;
+}
+
+/* ── DIVISOR DE PARTES ── */
+.part-divider {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 2.5rem 2rem;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.part-divider hr {
+  flex: 1;
+  border: none;
+  border-top: 1px solid var(--border);
+}
+
+.part-divider-label {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: .8rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+/* ── PERFIL ASPIRACIONAL ── */
+.aspire-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem;
+}
+
+.aspire-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.6rem;
+  transition: border-color .2s;
+}
+
+.aspire-card:hover {
+  border-color: var(--primary);
+}
+
+.aspire-icon {
+  font-size: 1.6rem;
+  margin-bottom: .8rem;
+}
+
+.aspire-card h3 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: .4rem;
+}
+
+.aspire-card p {
+  font-size: .875rem;
+  color: var(--muted);
+}
+
+/* ── EXPERIENCIA ── */
+.exp-item {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 0 2rem;
+  margin-bottom: 2.4rem;
+  padding-bottom: 2.4rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.exp-item:last-child {
+  border-bottom: none;
+}
+
+.exp-date {
+  font-size: .8rem;
+  color: var(--muted);
+  padding-top: .2rem;
+}
+
+.exp-content h3 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: .2rem;
+}
+
+.exp-company {
+  font-size: .85rem;
+  color: var(--primary);
+  margin-bottom: .5rem;
+}
+
+.exp-content p {
+  font-size: .875rem;
+  color: var(--muted);
+}
+
+/* ── PROYECTOS ── */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.2rem;
+}
+
+.project-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.6rem;
+  transition: transform .2s, border-color .2s;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--primary);
+}
+
+.project-tag {
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: .7rem;
+}
+
+.project-card h3 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: .4rem;
+}
+
+.project-card p {
+  font-size: .85rem;
+  color: var(--muted);
+  margin-bottom: 1rem;
+}
+
+.project-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .4rem;
+}
+
+.tech-pill {
+  font-size: .7rem;
+  font-weight: 500;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: .2rem .6rem;
+  color: var(--text);
+}
+
+/* ── HABILIDADES ── */
+.skills-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.4rem;
+}
+
+.skill-group-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: .9rem;
+  font-weight: 700;
+  color: var(--muted);
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  padding-bottom: .5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.skill-bar-item {
+  margin-bottom: 1rem;
+}
+
+.skill-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: .83rem;
+  margin-bottom: .35rem;
+}
+
+.skill-label span:last-child {
+  color: var(--muted);
+}
+
+.bar-track {
+  height: 6px;
+  background: var(--surface2);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.bar-fill {
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--primary), #a78bfa);
+  transition: width 1s ease;
+}
+
+.soft-list {
+  list-style: none;
+}
+
+.soft-list li {
+  display: flex;
+  align-items: center;
+  gap: .7rem;
+  font-size: .875rem;
+  padding: .55rem 0;
+  border-bottom: 1px solid var(--border);
+  color: var(--text);
+}
+
+.soft-list li:last-child {
+  border-bottom: none;
+}
+
+.soft-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--primary);
+  flex-shrink: 0;
+}
+
+/* ── HARDWARE ── */
+.hw-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .7rem;
+}
+
+.hw-badge {
+  font-size: .82rem;
+  font-weight: 500;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: .5rem 1rem;
+  color: var(--text);
+}
+
+/* ── HOBBIES ── */
+.hobbies-bg {
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.hobbies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.2rem;
+}
+
+.hobby-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.6rem 1.4rem;
+  transition: border-color .2s, transform .2s;
+}
+
+.hobby-card:hover {
+  border-color: var(--gold);
+  transform: translateY(-3px);
+}
+
+.hobby-emoji {
+  font-size: 2rem;
+  margin-bottom: .8rem;
+}
+
+.hobby-card h3 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: .95rem;
+  font-weight: 600;
+  margin-bottom: .4rem;
+}
+
+.hobby-card p {
+  font-size: .82rem;
+  color: var(--muted);
+}
+
+/* ── CONTACTO ── */
+.contact-box {
+  background: linear-gradient(120deg, rgba(124,107,255,.15) 0%, rgba(255,124,92,.1) 100%);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.contact-box h2 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: .6rem;
+}
+
+.contact-box p {
+  color: var(--muted);
+  margin-bottom: 1.6rem;
+}
+
+.contact-links {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.contact-link {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  padding: .65rem 1.4rem;
+  border-radius: 999px;
+  font-size: .875rem;
+  font-weight: 600;
+  text-decoration: none;
+  border: 1px solid var(--border);
+  color: var(--text);
+  background: var(--surface);
+  transition: border-color .2s, color .2s;
+}
+
+.contact-link:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.contact-link.primary-link {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #fff;
+}
+
+/* ── FOOTER ── */
+footer {
+  text-align: center;
+  padding: 2rem;
+  font-size: .8rem;
+  color: var(--muted);
+  border-top: 1px solid var(--border);
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 640px) {
+  .aspire-grid,
+  .skills-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .exp-item {
+    grid-template-columns: 1fr;
+    gap: .3rem;
+  }
+
+  .exp-date {
+    padding-top: 0;
+  }
+
+  nav {
+    padding: .8rem 1rem;
+  }
+
+  .nav-links {
+    gap: 1rem;
+  }
+}
